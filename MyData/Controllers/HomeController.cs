@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MyData.Models;
 
 namespace MyData.Controllers
 {
@@ -24,9 +25,14 @@ namespace MyData.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            PersonalContact me = new PersonalContact();
+            me.Name = "Kanchana Senadheera";
+            me.WorkAddress = "hSenid Software International, 50, Ward Place, Colombo 07.";
+            me.WorkPhone = "+94112699754";
+            me.MobilePhone = "+94778007867";
+            me.Email = "kanchana@hsenidlanka.com";
 
-            return View();
+            return View(me);
         }
     }
 }
